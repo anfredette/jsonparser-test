@@ -587,7 +587,7 @@ func main() {
   }
 }`)
 
-	fmt.Println("hello world")
+	fmt.Println("jsonparser test1 - single container")
 
 	// crictl pods --name bpfman-operator-65747dc769-pjztg -o json
 	podId, err := jsonparser.GetString(podInfo, "items", "[0]", "id")
@@ -606,5 +606,4 @@ func main() {
 
 	containerPidInt, err := strconv.ParseInt(containerPidStr, 10, 32)
 	fmt.Println("containerPidInt:", int32(containerPidInt), "err:", err)
-
 }
